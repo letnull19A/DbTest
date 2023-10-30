@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic.Logging;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -49,6 +50,26 @@ namespace DbTest
 
                 // обновление
                 var adapter = new SqlDataAdapter("SELECT * FROM users", connection);
+
+                var dataSet = new DataSet();
+
+                adapter.Fill(dataSet);
+
+                dataGridView1.DataSource = dataSet.Tables[0];
+                connection.Close();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (var connection = new SqlConnection("Data Source=DESKTOP-EDPUPHE\\SQLEXPRESS; Initial Catalog=TestDB; Integrated Security=true; TrustServerCertificate=True;"))
+            {
+                connection.Open();
+
+                // поиск
+                var query = new SqlCommand($"SELECT * FROM users WHERE surname LIKE '%{textBoxSearch.Text}%'", connection);
+
+                var adapter = new SqlDataAdapter(query);
 
                 var dataSet = new DataSet();
 

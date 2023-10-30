@@ -34,16 +34,18 @@
             textBoxFatherName = new TextBox();
             textBoxLogin = new TextBox();
             button1 = new Button();
+            textBoxSearch = new TextBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Location = new Point(12, 41);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(776, 338);
+            dataGridView1.Size = new Size(776, 309);
             dataGridView1.TabIndex = 0;
             // 
             // textBoxName
@@ -84,11 +86,30 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // textBoxSearch
+            // 
+            textBoxSearch.Location = new Point(12, 12);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.Size = new Size(190, 23);
+            textBoxSearch.TabIndex = 6;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(208, 11);
+            button2.Name = "button2";
+            button2.Size = new Size(127, 23);
+            button2.TabIndex = 7;
+            button2.Text = "поиск по фамилии";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
+            Controls.Add(textBoxSearch);
             Controls.Add(button1);
             Controls.Add(textBoxLogin);
             Controls.Add(textBoxFatherName);
@@ -111,5 +132,7 @@
         private TextBox textBoxFatherName;
         private TextBox textBoxLogin;
         private Button button1;
+        private TextBox textBoxSearch;
+        private Button button2;
     }
 }
